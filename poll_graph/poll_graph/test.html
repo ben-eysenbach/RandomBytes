@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Date');
+        data.addColumn('number', 'Hours');
+        data.addRow([new Date(2011, 1, 1), 5]);
+        data.addRow([new Date(2012, 1, 1), 6]);
+
+        
+
+        var options = {
+          vAxis: {minValue: 0},
+          pointSize: 10,
+          legend: {position: 'none'}
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    <title>Graph</title>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1 align=center>Pollution in Beijing</h1>
+        <h2 align=center><em>Data as reported by the US embassy</em></p>
+      </hgroup>
+    </header>
+    <div id="chart_div" style="width: 1000px; height: 600px;"></div>
+    
+    <footer align='center'>
+      <a href='https://github.com/ben-eysenbach/'>Ben Eysenbach</a>
+    </footer>
+    
+  </body>
+</html>
