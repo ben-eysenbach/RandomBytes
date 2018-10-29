@@ -1,5 +1,5 @@
 Django==1.4.3
 argparse==1.2.1
 distribute==0.6.31
-requests==1.1.0
+requests>=2.20.0
 wsgiref==0.1.2
